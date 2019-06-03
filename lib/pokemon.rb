@@ -16,6 +16,7 @@ class Pokemon
         id PRIMARY KEY INTEGER,
         name TEXT,
         type TEXT,
+        db TEXT,
         hp TEXT
       )
       SQL
