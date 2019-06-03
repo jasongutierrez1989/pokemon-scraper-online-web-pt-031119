@@ -11,7 +11,7 @@ class Pokemon
 
   def create_table
     sql = <<-SQL
-      CREATE TABLE IF DOES NOT EXIST pokemon(
+      CREATE TABLE IF NOT EXISTS pokemon(
         id PRIMARY KEY INTEGER,
         name TEXT,
         type TEXT,
