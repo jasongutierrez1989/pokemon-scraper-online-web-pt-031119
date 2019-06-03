@@ -9,7 +9,7 @@ class Pokemon
     @hp = hp
   end
 
-  def create_table
+  def self.create_table
     sql = <<-SQL
       CREATE TABLE IF NOT EXISTS pokemon(
         id PRIMARY KEY INTEGER,
