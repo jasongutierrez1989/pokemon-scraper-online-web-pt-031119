@@ -20,7 +20,7 @@ class Pokemon
       SQL
 
       DB[:conn].execute(sql)
-      
+
   end
 
   def self.save(name, type, db)
