@@ -18,7 +18,7 @@ class Pokemon
     type = pokemon[2]
     hp = pokemon[3]
 
-     pokemon_inst = Pokemon.new(id: id, name: name, type: type, hp: hp, db: db)
+     pokemon_inst = Pokemon.new(id: id, name: name, type: type, db: db)
   end
 
   def alter_hp(num, db)
