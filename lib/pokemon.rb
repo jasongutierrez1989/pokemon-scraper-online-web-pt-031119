@@ -10,21 +10,6 @@ class Pokemon
     @hp = hp
   end
 
-  def self.create_table
-    sql = <<-SQL
-      CREATE TABLE IF NOT EXISTS pokemon(
-        id PRIMARY KEY INTEGER,
-        name TEXT,
-        type TEXT,
-        db TEXT,
-        hp TEXT
-      )
-      SQL
-
-      DB[:conn].execute(sql)
-
-  end
-
   def self.save(name, type, db)
     db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)",name, type)
   end
