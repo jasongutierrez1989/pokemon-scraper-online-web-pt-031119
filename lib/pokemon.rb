@@ -1,8 +1,26 @@
 class Pokemon
-  attr_accessor :name, :type, :db, :id, :hp
+  attr_accessor :name, :type, :db, :hp
+  attr_reader :id
 
-  def initialize(keywords)
+  def initialize(id = nil, name, type, hp)
+    @id = id
+    @name = name
+    @type = type
+    @hp = hp
+  end
 
+  def create_table
+    sql = <<-SQL
+      CREATE TABLE IF DOES NOT EXIST pokemon(
+        id PRIMARY KEY INTEGER,
+        name TEXT,
+        type TEXT,
+        hp TEXT
+      )
+      SQL
+
+      DB[:conn].execute(sql)
+      
   end
 
   def self.save(name, type, db)
